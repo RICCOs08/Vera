@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour
 {
     public GameObject menu;
     public GameObject settingsmenu;
+    public GameObject gameWin;
     public void Play()
     {
         SceneManager.LoadScene(1);
@@ -27,5 +28,11 @@ public class Menu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void PlayGame()
+    {
+        menu.SetActive(false);
+        gameWin.SetActive(true);
     }
 }
