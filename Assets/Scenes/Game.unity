@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 326292030}
   m_Layer: 5
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,7 +248,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 611742605}
-  - component: {fileID: 611742606}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -264,7 +263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611742604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.38, y: -1.1, z: 0}
+  m_LocalPosition: {x: -3.38, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -272,20 +271,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &611742606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611742604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec8c2d8f4b9b5f34d955af605a9bb956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 10
-  _spriteChar: {fileID: 771612779}
 --- !u!1 &771612776
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,8 +282,10 @@ GameObject:
   - component: {fileID: 771612777}
   - component: {fileID: 771612779}
   - component: {fileID: 771612778}
+  - component: {fileID: 771612782}
   - component: {fileID: 771612781}
   - component: {fileID: 771612780}
+  - component: {fileID: 771612783}
   m_Layer: 0
   m_Name: idle_char_2nd
   m_TagString: Untagged
@@ -440,6 +427,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 2.909091}
   m_EdgeRadius: 0
+--- !u!114 &771612782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771612776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f5c774d36a1654fba8ee45e137d281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &771612783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771612776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8c2d8f4b9b5f34d955af605a9bb956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+  _spriteChar: {fileID: 771612779}
+  _jumpForce: 4
+  _groundCheckOffset: {x: 0, y: -1.13, z: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1029159616
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +509,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 7.9
   orthographic: 1
   orthographic size: 5
   m_Depth: -1
