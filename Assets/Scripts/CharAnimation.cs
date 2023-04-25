@@ -17,6 +17,7 @@ public class CharAnimation : MonoBehaviour
     void Update()
     {
         _animator.SetBool("isMoving", IsMoving);
+        _animator.SetBool("IsFlying", IsFlying);
     }
 
     public void Jump()
