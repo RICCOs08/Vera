@@ -70,7 +70,7 @@ public class MovementChar : MonoBehaviour
 
         if (hit.collider != null)
         {
-            _isGrounded = hit.collider.CompareTag("Ground") ? true : false;
+            _isGrounded = true;
         }
         else
         {
