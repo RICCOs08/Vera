@@ -5,22 +5,16 @@ using UnityEngine.UI;
 
 public class DialogSystem : MonoBehaviour
 {
+    public TriggerDialogue TriggerDialogue;
+
     public string[] lines;
     public float speed;
     public Text dilogueText;
 
     public int index;
-
-    
     void Start()
     {
         dilogueText.text = string.Empty;
-        
-    }
-
-    
-    void Update()
-    {
         
     }
 
@@ -42,7 +36,7 @@ public class DialogSystem : MonoBehaviour
 
     public void SkipText()
     {
-        if(dilogueText.text == lines[index])
+        if (dilogueText.text == lines[index])
         {
             NextLines();
         }
@@ -52,6 +46,7 @@ public class DialogSystem : MonoBehaviour
             dilogueText.text = lines[index];
 
         }
+        
     }
 
     public void NextLines()
